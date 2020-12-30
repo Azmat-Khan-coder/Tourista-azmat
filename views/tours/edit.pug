@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1 Edit Tours
+    form(action="/tours/edit/"+tour._id, method="post")
+        .form-group
+            label(for="title") Tour Title
+            input#title(type="text", class="form-control", name="title", value=tour.title)
+            small Title must be 3-30 characters long.
+        .form-group
+            label(for="noOfDays") No Of Days
+            input#noOfDays(type="text", class="form-control", name="noOfDays", value=tour.noOfDays)
+        .form-group
+            label(for="perHeadPrice") Per Head Price
+            input#price(type="text", class="form-control", name="perHeadPrice", value=tour.perHeadPrice)
+        input(type="submit", class="btn btn-info")

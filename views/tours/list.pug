@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css")
+    link(rel="stylesheet", href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css")
+    script(src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js")
+    script(src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js")
+    script.
+        $(document).ready(function() {
+            $('#adminTable').DataTable();
+        });
+    .row
+        .col-sm-8
+            h1 List of Tours
+        .col-sm-4
+            a(href="/tours/add", class="btn btn-success float-right") Add new Tour
+    table#adminTable.table.table-hover.table-striped.table-bordered
+        thead
+            tr
+                th Title
+                th No of Days
+                th Per Head Price
+                th Actions
+        tbody
+            each tour in tours
+                tr
+                    td=tour.title
+                    td=tour.noOfDays
+                    td=tour.perHeadPrice
+                    td
+                        a(href="/tours/delete/"+tour._id, class="btn btn-danger") Delete
+                        a(href="/tours/edit/"+tour._id, class="btn btn-warning") Edit
+    //- table.table
+    //-     thead
+    //-         tr
+    //-             th Title
+    //-             th No of Days
+    //-             th Per Head Price
+    //-             th Actions
+    //-     tbody
+    //-         each tour in tours
+    //-             tr
+    //-                 td=tour.title
+    //-                 td=tour.noOfDays
+    //-                 td=tour.perHeadPrice
+    //-                 td
+    //-                     a(href="/tours/delete/"+tour._id, class="btn btn-danger") Delete
+    //-                     a(href="/tours/edit/"+tour._id, class="btn btn-warning") Edit

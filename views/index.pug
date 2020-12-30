@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  #carouselExampleCaptions.carousel.slide(data-bs-ride='carousel')
+    ol.carousel-indicators
+      li.active(data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0')
+      li(data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1')
+      li(data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2')
+    .carousel-inner
+      .carousel-item.active
+        img.d-block.w-100(src='/images/img1.jpg' alt='Kashmir Pic')
+        .carousel-caption.d-none.d-md-block
+          h5 Welcome to Tourista
+      .carousel-item
+        img.d-block.w-100(src='/images/img2.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block
+          h5 Welcome to Tourista
+      .carousel-item
+        img.d-block.w-100(src='/images/img3.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block
+          h5 Welcome to Tourista
+    a.carousel-control-prev(href='#carouselExampleCaptions' role='button' data-bs-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.visually-hidden Previous
+    a.carousel-control-next(href='#carouselExampleCaptions' role='button' data-bs-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.visually-hidden Next
+
+  

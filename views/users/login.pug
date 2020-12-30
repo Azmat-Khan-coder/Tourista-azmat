@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 Login
+  form(action="/users/login",method="post")
+        .form-group
+            label(for="email") Email
+            input#email(type="email", class="form-control", name="email", value=loginVar.lEmail)
+            small=loginVar.emailErrMsg
+        .form-group
+            label(for="password") Password
+            input#password(type="password", class="form-control", name="password", value=loginVar.lPassword)
+            small=loginVar.pswrdErrMsg
+        input(type="submit", class="btn btn-info" value="Login")
